@@ -1,13 +1,16 @@
 package com.rara.my_selectshop_beta.entity;
 
+import com.rara.my_selectshop_beta.dto.ProductRequestDto;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class Product {
 	@Id

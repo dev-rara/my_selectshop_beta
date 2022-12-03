@@ -1,5 +1,6 @@
 package com.rara.my_selectshop_beta.dto;
 
+import com.rara.my_selectshop_beta.entity.Product;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

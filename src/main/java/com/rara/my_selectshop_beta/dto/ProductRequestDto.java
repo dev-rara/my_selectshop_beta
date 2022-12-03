@@ -12,7 +12,7 @@ public class ProductRequestDto {
 	private String title;
 
 	//관심 상품 image URL
-	private Strin iamge;
+	private String image;
 
 	//관심 상품 구매링크 URL
 	private String link;

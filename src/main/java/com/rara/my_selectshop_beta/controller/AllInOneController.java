@@ -1,9 +1,22 @@
 package com.rara.my_selectshop_beta.controller;
 
+import com.rara.my_selectshop_beta.dto.ProductMypriceRequestDto;
+import com.rara.my_selectshop_beta.dto.ProductRequestDto;
 import com.rara.my_selectshop_beta.dto.ProductResponseDto;
+import com.rara.my_selectshop_beta.entity.Product;
+import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +32,7 @@ public class AllInOneController {
 		Product product = new Product(requestDto);
 
 		//DB 연결
-		Connection connection = Divermaneger.getConnection("jdbc:h2:mem:db", "sa", "");
+		Connection connection = DriverManager.getConnection("jdbc:h2:mem:db", "sa", "");
 
 		//DB Query 작성
 		PreparedStatement ps = connection.prepareStatement("select max(id) as id from product");
